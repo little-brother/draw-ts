@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8"/>
+	<title>Draw-TS</title>
+	<script src="index.js"></script>	
+	<link href = "index.css" rel="stylesheet"/>
+</head>
+<body>
+	<canvas id = "canvas"></canvas>
+
+	<div id = "prev" class = "arrow">&#9668;</div>
+	<div id = "next" class = "arrow">&#9658;</div>
+
+	<input type = "file" id = "upload" name = "upload" />
+
+	<table id = "option" class = "dialog">
+		<tr>
+			<td>Value range</td>
+			<td>
+				<input id = "opt-min" type = "text" value = "0" number autocomplete = "off" placeholder = "min"/> 
+				- 
+				<input id = "opt-max" type = "text" value = "100" number autocomplete = "off" placeholder = "max" />
+
+			</td>
+		</tr>
+
+		<tr>
+			<td>Duration</td>
+			<td>
+				<select id = "opt-duration" autocomplete = "off">
+					<option value = "hour">hour</option>
+					<option value = "day" selected>day</option>
+					<option value = "week">week</option>
+				</select>
+			</td>
+		</tr>
+
+		<tr>
+			<td>Start date</td>
+			<td><input id = "opt-start-date" type = "text" autocomplete = "off" title = "The date defines starting point of time-series on initial&#10;screen. The date must be set by yyyy/MM/dd format."></td>
+		</tr>
+
+		<tr>
+			<td>Sensitivity</td>
+			<td><input id = "opt-sensitivity" type="range" min="1" max="50" value="5"  number autocomplete = "off" title = "Sensitivity: 5"></td>
+		</tr>
+	</table>
+
+	<table id = "export-option" class = "dialog">
+		<tr>
+			<td>Output datetime as</td>
+			<td>		
+				<select id = "opt-datetime-format" autocomplete = "off">
+					<option value = "number" selected>UTC (number)</option>
+					<option value = "string">YYYY/MM/DD HH:MI</option>
+				</select>
+			</td>
+		</tr>
+
+		<tr>
+			<td>Round a value to the</td>
+			<td>
+				<input id = "opt-round" type = "text" value = "2" number autocomplete = "off" title = "Use -1 to avoid rounding"> decimal places
+			</td>	
+		</tr>
+
+		<tr>
+			<td>Export charts data to</td>
+			<td>
+				<select id = "opt-export-format" autocomplete = "off" title = "See option hint. It's assumed that (time3, value3) is marked.">
+					<option value = "json" selected title = '[[time1, value1], [time2, value2], [time3, value3, 1],...]'>json v1</option>
+					<option value = "json2" title = '{&#10;&#09;"times": [time1, time2, ...],&#10;&#09;"values": [value1, value2, ...],&#10;&#09;"marks" : [time3, ...]&#10;}'>json v2</option>
+					<option value = "csv" title = 'time1,value1&#10;time2,value2&#10;time3,value3,1&#10;...'>csv</option>
+				</select>
+			</td>
+		</tr>
+
+		<tr>	
+			<td>Export only current</td>
+			<td><input id = "opt-only-current" type = "checkbox" autocomplete = "off"></td>
+		</tr>
+	</div>	
+
+	<div id = "menu" style = "display: none;">
+		<div><div class = "key" code = "79">O</div> Option</div>
+		<div></div>
+		<div><div class = "key" code = "46">Del</div> Clear current screen</div>
+		<div><div class = "key" code = "32">Space</div> Set current screen as background</div>
+		<div><div class = "key" code = "73">I</div> Set background image from file</div>
+		<div><div class = "key" code = "85">U</div> Reset background image</div>
+		<div></div>
+		<div><div class = "key" code = "87">W</div> Export option</div>
+		<div><div class = "key" code = "81">Q</div> Export data</div>
+	</div>
+
+	<div id = "mark-hint">Use Ctrl + click to mark a point</div>
+	<a id = "git" href = "https://github.com/little-brother/draw-ts">https://github.com/little-brother/draw-ts</a>
+</body>
+</html>

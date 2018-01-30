@@ -1,0 +1,33 @@
+body {margin: 10px;}
+canvas {border: 1px solid #000; background-repeat: no-repeat; background-size: 100% 100%;}
+
+.arrow {position: absolute; top: 50%; margin-top: -25px; height: 50px; font-size: 30px; cursor: pointer; -moz-user-select: -moz-none; -khtml-user-select: none; -webkit-user-select: none; -ms-user-select: none; user-select: none;}
+#prev {left: 20px;}
+#next {right: 20px;}
+
+#upload {display: none;}
+
+.dialog {position: absolute; top: 50%; left: 50%; border: 1px solid #bbb; padding: 20px; background: #fff; display: none;}
+.dialog select, .dialog input[type="text"] {border: 1px solid #bbb; text-align: center; width: 100%;}
+.dialog select, .dialog input {margin: 0; padding: 0}
+
+#option {margin-top: -50px; margin-left: -100px;}
+#option td:nth-child(1) {min-width: 85px;} 
+#option td:nth-child(2) {max-width: 100px;} 
+#option #opt-min, #option #opt-max {width: 41px;} 
+#option #opt-sensitivity {position: relative; top: 5px; width: 100%;}
+
+#export-option {margin-top: -70px; margin-left: -130px;} 
+#export-option td:nth-child(1) {min-width: 130px;}
+#export-option #opt-round {width: 30px;}
+
+#menu {position: fixed; z-index: 10; border: 1px solid #bbb; background: #fff; padding: 5px 0;}
+#menu > div {padding: 2px 5px; cursor: pointer; margin-left: 35px; padding-left: 10px;}
+#menu > div:hover {background-color: #fafafa;}
+#menu .key {font-weight: bold; border: 1px solid #bbb; border-radius: 3px; width: 45px; margin-left: 10px; margin-right: 5px; text-align: center; display: inline-block; background: #fff; float: right;}
+#menu > div:hover .key {background-color: #afa;}
+#menu::before {height: 100%; width: 35px; background: #eee; content: ''; z-index: -1; display: inline-block; position: absolute; top: 0;}
+#menu > div:empty {height: 0; border-bottom: 1px dotted #bbb; margin: 5px 0 4px 35px; padding: 0; pointer-events: none;}
+
+#mark-hint {font-size: 10px; position: fixed; left: 10px; bottom: 3px;}
+#git {font-size: 10px; position: fixed; right: 10px; bottom: 3px;}
