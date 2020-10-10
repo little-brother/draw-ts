@@ -1,5 +1,5 @@
 Draw-TS is a time series generator by hand drawing.<br>
-Check [demo](http://little-brother.ru/draw-ts/) and [video](https://www.youtube.com/watch?v=UA0AR1WOiNQ) to grok it.<br>
+Check [demo](https://little-brother.github.io/draw-ts/) and [video](https://www.youtube.com/watch?v=UA0AR1WOiNQ) to grok it.<br>
 Inspired by [Time Series Maker](https://github.com/mbonvini/TimeSeriesMaker).
 
 &nbsp;
